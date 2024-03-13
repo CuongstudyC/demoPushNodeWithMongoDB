@@ -1,0 +1,20 @@
+extends ../layout 
+block content 
+  h3 
+    a(href="/user/create") Create New User 
+    if users && users.length 
+      h1 User List 
+      table 
+        thead 
+          tr 
+            th Email 
+            th Full Name 
+            th Phone 
+        tbody
+          each user in users 
+            tr 
+              td= user.email 
+              td= user.fullname 
+              td= user.phone 
+    else 
+      div No Data

@@ -1,0 +1,31 @@
+extends ../layout 
+block content 
+  h1 Create New User 
+  form(action="/user/create", method="post")
+    div
+      label(for="email") Email 
+      input#email(type="text", name="email" value= (email != null && email) ? email : '')
+      if errors && errors != ""
+        each err in errors 
+          if (err.path == 'email')
+            .error= err.msg
+
+    div
+      label(for="password") Password
+      input#password(type="password", name="password")
+      if errors && errors != ""
+        each err in errors 
+          if (err.path == 'password')
+            .error= err.msg
+    div
+      label(for="fullname") Full Name
+      input#fullname(type="text", name="fullname"  value= (fullname != null && fullname) ? fullname : '')
+    div
+      label(for="phone") Phone 
+      input#phone(type="text", name="phone"  value= (phone != null && phone) ? phone : '')
+      if errors && errors != ""
+        each err in errors 
+          if (err.path == 'phone')
+            .error= err.msg
+    div 
+      input(type="submit", value="Create")
