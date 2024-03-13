@@ -4,7 +4,6 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
-// mongoose.connect('mongodb://localhost:27017/demo_validation');
 mongoose.connect('mongodb+srv://cuong979899:cuocsongma123@validate.bbwogpc.mongodb.net/validate?retryWrites=true&w=majority&appName=validate');
 
 var indexRouter = require('./routes/index');
